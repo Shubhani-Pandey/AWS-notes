@@ -1,0 +1,104 @@
+------BOOTSTRAPING-----
+Deploy your application by launching your instance
+Providing the script in user data and launching application during instance
+
+
+META DATA----> all the data about CE2 instance present in the details tab
+
+
+We can associate the Elastic Ip address with the puvlib Ip address so thta it doesn't change
+1. Go to elastic Ip in left panel and create the Elastic Ip
+2. Go to actions and click on associate elastic Ip and chose that instance.
+( during this step it asks for pvt Ip because the public IP is linked with pvt IP)
+
+
+--------EC2 STORAGE TYPES-------
+1. File STORAGE[ Elastic File Store EFS]
+
+
+2. Block STORAGE[ Elastic Block Store EBS]--> 
+data persists independently of the life of instance.
+File systems and databases can be run
+EBS volume of one AZ can only be used with EC2 instance of that AZ
+One EBS can be moutned with one instance only(for multiple mouting use EFS)
+Whenver we create any EBS valome , AWS creates its replica in same AZ as a backup
+
+
+
+-----------------EBS VOLUME TYPES-----------
+General Purpose SSD(GP2)
+1. Cheap
+2. Balance of price and performance
+3. 3 * IOPS/GB upto 10,000 IOPS 
+    eg--> 50GiB will have 3*50=150 IOPS  but min=100 IOPS hence even when 8GiB we get 100 IOPS    ***********************************
+4. Burst upto 3000 IOPS for volumes
+5. Bootable
+
+IOPS = INPUT OUTPUT OPERATION PER SEC
+
+
+Provisioned IOPS SSD(IO1)
+1. I/O intensive application eg RDBMS or noSQL
+2. >10,000 IOPS and can provision upto 20,000 IOPS/volume
+3. Bootable
+
+Throughput Optimized HDD(ST1): Magnetic Disks
+1.Frequently accessed, Sequential data 
+2. Big Data, Data Warehouse, Log Processing etc
+3. Can't be the BOOT vol
+
+
+Cold HDD(SC1)
+1. Lowest cost for non-frequent accessed workloads
+2. File Server
+3. Can't be the BOOT vol
+
+
+Magnetic(Standard)
+1. Bootable and used for non-frequently accessed data.
+
+
+
+-------IMPORTANT-----
+Since only General Purpose, Provisional and Magnetic are Bootable...therefore only these three options are available for ROOT while creating the instance...while all 5 instances are available in case of EBS.
+
+
+3. Object STORAGE[ Simple Storage Service S3, Glacier]
+
+
+------AMAZON INSTANCE STORE (Root Volume when EBS only ot selected)-----
+data stored on local instance store persists only as long as instance is alive.
+storage is ephemeral(lasts for a very short time)
+
+
+
+---------------SNAPSHOTS----------
+Backup of EBS volumes
+Snapshots are stored on S3
+Snapshots are point in time copies of volumes
+These are incremental backups. Only changed blocks are moved to S3.
+First snapshot takes time.
+Excludes data in the cache of OS and application
+Status of EBS snapshots can be monitored using CloudWatch events.
+
+
+
+--------------CREATE AMI--------------
+
+AMI is like the snapshot of the root volume
+Snapshot just contains data while AMI contains OS, application etc
+
+1. Provides info required to launch instance, which is a virtual server in cloud.
+2. AMI includes following
+--Template for root vol of instance(OS, applications, application server etc)
+--Launch permissions that control which AWS account can use AMI to launch instance
+--Block device mapping that specifies the vol to attach to instance when it's launched.
+3.Select AMI based on following
+--Region
+--OS
+--Launch Permissions
+--Architecture(32/64 bit)
+--Storage for root
+
+
+refer to pic for AMI cycle

@@ -1,0 +1,70 @@
+----EC2-----
+Scalable computing
+eliminates hardware investment
+launch virtual server, configure security and networking, maanage storage
+reducing need to forecast traffic, since scalable
+pay for what you use
+linux or windows
+for reliability--> chose across regions and availability zones
+
+------LAUNCHING EC2 INSTANCE FROM AMI-----
+AMI(Amazon Machine Image)---> template that contains software config(os,server, applications)
+from AMI we can launch 1 or multiple instances, which are copy of AMI running as virtual server in cloud.
+Instances keep running until we stop or terminate them or they fail. We can launch new instance from AMI.
+
+
+------AMI BY-----
+my AMI
+AMI marketplace
+Community AMI
+Free tier
+
+
+
+------IMPORTANT-------
+public Ip address and public DNS address are not available when the instance is in stop state, while pvt DNS and pvt IP address are available. 
+To get the public DNS and public IP we should start the instance first.
+
+
+-----EC2 FAMILY TYPES------
+Dense Storage(Fileservers/Data Warehousing/ Hadoop)--->D2
+Compute optimized(CPU Intesnsive)---->C4
+Memory optimized(Memory intensive Apps/Dbs)--> R4
+Memory optimized(SAP HANA/ Apache Spark)----> X1
+Graphic Intensive(Video Encoding/ 3d Application Streaming)---->G2
+High speed storage(NoSQL, Data Warehousing)--->t2
+Lowest cost, General Purpose(web servers/ small db)---->T2
+General Purpose(Application servers)-----> M4
+Field Programmable Gate Array(Hardware Acceleration)--->F1
+Graphics/ General Purpose(ML , Bitcoin mining)---> P2
+
+
+
+
+------EC2 PRICING OPTIONS-------
+ON DEMAND--> fixed rate by hour, for low costa nd flexibity without upfront payment, short-term and unpredictable workspace.
+RESERVED---> for 1-3 yrs,steady usage, capacity reservation based on baselining and hence signicantly less hourly charge
+SPOT--->Bid for instance, application with flexible start and end times,lowest cost and no cost for hour when AWS terminates instance.
+DEDICATED HOSTS--> physical EC2 dedicated servers. Useful in case of server bound licenses for regulatory requirements. On demand pricing and cheap if reserved.
+
+
+-----FEATURES OF EC2-----
+1. vurtual computing env, known as instances
+2. preconfigured templates, known as AMI's(OS and additional softwares)
+3. various configs of CPU, storage, memory known as INSTANCE TYPES------
+4. secure login info using key pairs (AWS stores public key, we need to store private key)
+5. Storage vol for temp data that is del when instance terminates, INSTANCE STORE VOLUMES
+6. persistant storage volumes for data using (Amazon EBS), Amazon EBS VOLUME
+ 
+ 
+ 
+--------EC2 lifecycle------IMPORTANT------
+1. Payment only during RUNNING AND STOP-HIBERNATING status and never anywhere else.
+2. Stop-Hibernating is between running and stopping, where the system saves the files in background.
+
+
+------EC2 INSTANCE ACCESS------
+PUBLIC DNS
+PUBLIC IP---> this chnages everytime we start and stop a instance, thus ervytime we will need to connect again because of diff IP
+ELASTIC IP ( OR STATIC PUBLIC IP)---> this keeps the IP fixed, thus paid
+

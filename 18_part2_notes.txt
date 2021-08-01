@@ -1,0 +1,29 @@
+-------EC2----------
+1. select Amazon Machine Image(AMI)---> its a template that contains software config(os, application server, application) required to launch instance.---> provided by aws marketplace, aws community or custom/
+2. coose instance type --> micro free-->MEMORY IN GiB---> Instance storage(GB)(EBS only)--->
+3. Configure instance details----> Region contains AZ and AZ contains subnets--> shutdown behaviour(stop or terminate)----> User data
+4. Add storage --> by default root of 8GB uto 30Gb--->volume type
+5. Add tags --> 
+6. configure security group -> what type of traffic is allowed on the server
+
+-------IMPORTANT------
+When purchasing disk drives, 1 GB is often defined as 1,000,000,000 bytes. ... GiB (Gibibytes) is a standard unit used in the field of data processing and transmission and is defined as base 1024 rather than base 1000. For example, 1 GB is defined as 1000³ bytes, whereas 1 GiB is defined as 1024³ bytes.
+EBS ONLY--> means that data is persistane...ie.. even after you close the server the data remains saved just like C drive in lappy.
+Instance storage is not persistant
+User data---> on launching instace it's blank but you want something to be installed while instance creation...for that you can give the required shell script in the user data
+Volume type-->Root volume can only be general purpose/provisional/magnetic but EBS can be general purpose/provisional/magnetic/Throughput Optimized/Cold HDD
+Status checks(System status check and Instance status check)-> checks problems that can impair the instance from running
+port is by default = 22 for ssh connection in putty
+
+use puttykeygen to convert pem key to ppk key
+now connect to ssh server using ppk key and putty
+open putty-> enter ip address-> connection-> ssh-> auth-> ppk key file
+
+by default username= ec2-user
+
+
+to connect to windows we can use remote desktop
+
+
+windows to linux-> use putty
+linux to linux -> ssh

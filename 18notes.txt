@@ -1,0 +1,53 @@
+AWS GLOBAL INFRA
+Region-> location -> have multiple availbaility zones -> thus region= collection of availability zones
+Availability zone-> physical loc of data center with redundant power, networking, and connectivity in an AWS Region
+AWS Local Zones-->extension of an AWS Region, it places compute, storage, database, and other select AWS services closer to end-users. With AWS Local Zones, you can easily run highly-demanding applications that require single-digit millisecond latencies to your end-users
+AWS Wavelength--> it brings AWS services to the edge of the 5G network, minimizing the latency to connect to an application from a mobile device.
+                  deliver single-digit millisecond latencies to mobile devices
+				  eg-> game and live video streaming, machine learning inference at the edge, and augmented and virtual reality (AR/VR)
+AWS Outposts--> bring native AWS services, infrastructure, and operating models to virtually any data center, co-location space, or on-premises facility.
+
+
+Edge location-> used during transfer of data from one AZ to another.
+
+applications to run in multiple AZ's to achieve even greater fault-tolerance.
+
+example--> Mumbai Region has 3 availability zones(data centers)
+
+
+IMP
+25 regions with 80 availability zones across world
+https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
+
+
+ADVANTAGES
+Security
+Flexibility
+Easy to Use
+Scalability (vertical scalability(increase RAM) or horizontal scalability(Use one more Server))
+Cost Savings
+
+
+
+--------AWS SERVICES----------
+(COMPUTE TAB) EC2(IAAS) -> SERVER
+EBS(elastic box service-> STORAGE-> like hard disk-> can be connected to EC2 insatnce)
+EFS(Elastic file sharing)-> STORAGE-> Shared by differnet ec2 instances
+S3(Simple Storage Service)-> Storage
+RDS-> Relational database service-
+(Networking) VPS-> Virtual Private Cloud -> for placing servers-> outside VPC no one will have access to that server
+Route 53
+Load Balancer
+(COMPUTE TAB) AutoScaling -> for increasing capacity
+CloudWatch -> watch all other cloud services-> for monitoring
+CloudTrail -> maintains logs-> which servie used by whom and how-> that log can then be stored in a storgae sevice like S3, EBS etc
+(COMPUTE TAB)Elastic Beanstalk -> PaaS -> dont have to worry about platform fror hosting, takes care of that --> run and manage web apps
+(APPLICATION INTEGRATION TAB)SNS (Simple Notification Service) , SQS(Simple Queue Service)-> for sending mail to user-> eg in case of uthauth access atempt
+(COMPUTE TAB) LAMBDA(Serverless Service)(IAAS) -> we don't need to worry about background, takes care of it --> servers initiated on backend automatically
+Direct connect (costly)(VPN not costly)-> establish connection between aws server(some servers that were migrated to AWS) and local machine(on-premises)
+CodeCommit(version control)
+Code build(build code)]
+code deploy(deploy code)
+code pipeline->integrates code commit+build+deploy so contiues addition and continues deployemnt takes place i.e CACD pipeline..like Jenkins
+
+

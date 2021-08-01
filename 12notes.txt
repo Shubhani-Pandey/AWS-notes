@@ -1,0 +1,44 @@
+Pay as you go
+
+               CLOUD 
+			   
+			   
+Practice of using remote servers on internet for carrying out tasks rather than using your own.
+On demand delivery of computing resources, database storage, applicatiions, IT resources etc through cloud sevice via internet is called cloud computing.
+
+
+No capacity planning in advance
+Deployment-> few clicks to make changes in deployment instead of weeks
+Maintainance-> done by AWS
+Backup-> backup of data centers costly generally(recovery immediately in AWS)
+ 
+
+ADVANTAGES
+Trade capital expenses for variable expenses.
+Benefit from massive economies of scale
+Stop guessing capacityIncrease speed and agility
+Stop spending money on running and maintaining data centers
+Go global in minutes (thus low latency)
+
+
+SERVICE MODELS
+Traditional IT 
+Infrastructure as a service (EC2 instances, virtual machines)
+Platform as a service (Google Forms)--> only deployment required
+Software as a service (You Tube, Netflix, GMail)--> login and use
+
+
+DEPLOYMENT MODELS
+Public (Govt sites)--> any one can login 
+Private --> only employees of org can access (One Drive)
+Hybrid ---> public + pvt
+Community---> shared among several org (LIC process same for every org---> so they can share same infra)
+
+
+
+          AWS
+
+Secure cloud services platform offering compute power, database storage, content delivery etc.
+Pay as u go (no capital invetsment)
+helps in controlling, auditing and managing identity, configuration and usage.
+
